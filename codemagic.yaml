@@ -1,0 +1,11 @@
+workflows:
+  my-workflow:
+    instance_type: linux
+    environment:
+      java: 17
+    scripts:
+      - name: Build Android App Bundle
+        working_directory: android
+        script: ./gradlew bundleRelease
+    artifacts:
+      - build/**/outputs/bundle/**/*.aab
